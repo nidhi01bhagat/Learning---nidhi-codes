@@ -1,1 +1,20 @@
 
+# Problem: Move all zeros to end
+# Approach: Two Pointer
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+def move_zeros(arr):
+    j = 0   # position to place next non-zero
+    
+    for i in range(len(arr)):   # check every element
+        if arr[i] != 0:         # if element is non-zero
+            arr[i], arr[j] = arr[j], arr[i]   # swap
+            j += 1              # move j to next position
+            
+    return arr
+
+
+# Example
+arr = [0, 1, 0, 3, 12]
+print(move_zeros(arr))   # Output: [1, 3, 12, 0, 0]
